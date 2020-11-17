@@ -55,6 +55,7 @@ export default {
 	},
 	supports: {
 		html: false,
+		align: true,
 	},
 	transforms,
 	edit,
