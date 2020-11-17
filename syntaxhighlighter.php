@@ -506,7 +506,6 @@ class SyntaxHighlighter {
 	 */
 	public function render_block( $attributes, $content ) {
 		$remaps = array(
-			'className'         => 'classname',
 			'lineNumbers'       => 'gutter',
 			'firstLineNumber'   => 'firstline',
 			'highlightLines'    => 'highlight',
@@ -514,6 +513,7 @@ class SyntaxHighlighter {
 			'makeURLsClickable' => 'autolinks',
 			'quickCode'         => 'quickcode',
 		);
+		$classNames = ! empty( $attributes['className'] ) ? [ esc_attr( $attributes['className'] ) ] : [];
 
 		foreach ( $remaps as $from => $to ) {
 			if ( isset( $attributes[ $from ] ) ) {
@@ -533,7 +533,9 @@ class SyntaxHighlighter {
 		$code = str_replace( '&lt;', '<', $code );
 		$code = str_replace( '&amp;', '&', $code );
 
-		return $this->shortcode_callback( $attributes, $code, 'code' );
+		$code = $this->shortcode_callback( $attributes, $code, 'code' );
+
+		return '<div class="wp-block-syntaxhighlighter-code ' . esc_attr( join(' ', $classNames ) ) . '">' . $code . '</div>';
 	}
 
 	// Add the custom TinyMCE plugin which wraps plugin shortcodes in <pre> in TinyMCE
@@ -1325,7 +1327,7 @@ class SyntaxHighlighter {
 
 		$params = apply_filters( 'syntaxhighlighter_cssclasses', $params ); // Use this to add additional CSS classes / SH parameters
 
-		return apply_filters( 'syntaxhighlighter_htmlresult', '<pre class="' . esc_attr( implode( ' ', $params ) ) . '"' . $title . '>' . $code . '</pre>' );;
+		return apply_filters( 'syntaxhighlighter_htmlresult', '<pre class="' . esc_attr( implode( ' ', $params ) ) . '"' . $title . '>' . $code . '</pre>' );
 	}
 
 
