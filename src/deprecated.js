@@ -9,36 +9,20 @@ export default [
 
 			language: {
 				type: 'string',
-				default: syntaxHighlighterData.settings.language.default,
+				default: 'text',
 			},
 
 			lineNumbers: {
 				type: 'boolean',
-				default: syntaxHighlighterData.settings.lineNumbers.default,
+				default: true,
 			},
 
 			firstLineNumber: {
 				type: 'string',
-				default: syntaxHighlighterData.settings.firstLineNumber.default,
 			},
 
 			highlightLines: {
 				type: 'string',
-			},
-
-			wrapLines: {
-				type: 'boolean',
-				default: syntaxHighlighterData.settings.wrapLines.default,
-			},
-
-			makeURLsClickable: {
-				type: 'boolean',
-				default: syntaxHighlighterData.settings.makeURLsClickable.default,
-			},
-
-			quickCode: {
-				type: 'boolean',
-				default: syntaxHighlighterData.settings.quickCode.default,
 			},
 		},
 
