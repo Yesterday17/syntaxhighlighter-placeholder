@@ -2,12 +2,11 @@
 
 **************************************************************************
 
-Plugin Name:  SyntaxHighlighter Evolved
-Plugin URI:   https://alex.blog/wordpress-plugins/syntaxhighlighter/
+Plugin Name:  SyntaxHighlighter Placeholder
 Version:      3.114514.5
-Description:  Easily post syntax-highlighted code to your site without having to modify the code at all. Uses Alex Gorbatchev's <a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a>. Includes a new editor block.
+Description:  Simple placeholder for SyntaxHighligher, converts syntaxhighlighter/code block to simple &lt;pre>&lt;code class="language-xxx"> block.
 Author:       Alex Mills (Viper007Bond)
-Author URI:   https://alex.blog/
+Author URI:   https://blog.mmf.moe
 Text Domain:  syntaxhighlighter
 License:      GPL2
 License URI:  https://www.gnu.org/licenses/gpl-2.0.html
